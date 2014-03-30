@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\ListItem\AddListItemCommand.cs" />
+    <Compile Include="Commands\ListItem\DeleteListItemCommand.cs" />
     <Compile Include="Commands\ListItem\ListItemCommand.cs" />
+    <Compile Include="Commands\ListItem\UpdateListItemCommand.cs" />
     <Compile Include="Commands\SPCommand.cs" />
     <Compile Include="Commands\SPCommandCollection.cs" />
     <Compile Include="Contracts\ICommand.cs" />
