@@ -29,6 +29,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>jjaramilloKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -43,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\Field\AddSPFieldChoiceCommand.cs" />
+    <Compile Include="Commands\Field\AddSPFieldCommand.cs" />
+    <Compile Include="Commands\Field\SPFieldCommand.cs" />
     <Compile Include="Commands\ListItem\AddListItemCommand.cs" />
     <Compile Include="Commands\ListItem\DeleteListItemCommand.cs" />
     <Compile Include="Commands\ListItem\ListItemCommand.cs" />
@@ -52,6 +61,9 @@
     <Compile Include="Contracts\ICommand.cs" />
     <Compile Include="Commands\CommandCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="jjaramilloKey.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

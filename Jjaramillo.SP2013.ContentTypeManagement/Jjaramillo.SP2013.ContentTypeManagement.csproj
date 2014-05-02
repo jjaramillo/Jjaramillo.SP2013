@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C457900C-4303-4B06-B11C-5F08D38A4617}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Jjaramillo.SP2013.ContentTypeManagement</RootNamespace>
+    <AssemblyName>Jjaramillo.SP2013.ContentTypeManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <TokenReplacementFileExtensions>$(TokenReplacementFileExtensions);xml;aspx;ascx;webpart;dwp;bdcm;svc;</TokenReplacementFileExtensions>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ISAPI\ContentTypeManagement\Field\Field.svc.cs">
+      <DependentUpon>Field.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ISAPI\ContentTypeManagement\Field\IField.cs" />
+    <Compile Include="Layouts\ContentTypeManagement\FieldManagement.aspx.cs">
+      <DependentUpon>FieldManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\ContentTypeManagement\FieldManagement.aspx.designer.cs">
+      <DependentUpon>FieldManagement.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="INC\metro.ui\fonts\iconFont.eot" />
+    <None Include="INC\metro.ui\fonts\iconFont.json" />
+    <None Include="INC\metro.ui\fonts\iconFont.ttf" />
+    <None Include="INC\metro.ui\fonts\iconFont.woff" />
+    <None Include="INC\metro.ui\fonts\metroSysIcons.ttf" />
+    <None Include="INC\metro.ui\fonts\metroSysIcons.woff" />
+    <None Include="INC\metro.ui\js\README.md" />
+    <None Include="INC\metro.ui\less\accordion.less" />
+    <None Include="INC\metro.ui\less\balloon.less" />
+    <None Include="INC\metro.ui\less\breadcrumbs.less" />
+    <None Include="INC\metro.ui\less\buttons.less" />
+    <None Include="INC\metro.ui\less\calendar.less" />
+    <None Include="INC\metro.ui\less\carousel.less" />
+    <None Include="INC\metro.ui\less\colors.less" />
+    <None Include="INC\metro.ui\less\countdown.less" />
+    <None Include="INC\metro.ui\less\dataTables.less" />
+    <None Include="INC\metro.ui\less\fluent-menu.less" />
+    <None Include="INC\metro.ui\less\forms.less" />
+    <None Include="INC\metro.ui\less\funcs.less" />
+    <None Include="INC\metro.ui\less\grid.less" />
+    <None Include="INC\metro.ui\less\hint.less" />
+    <None Include="INC\metro.ui\less\iconFont-content.less" />
+    <None Include="INC\metro.ui\less\iconFont.less" />
+    <None Include="INC\metro.ui\less\icons.less" />
+    <None Include="INC\metro.ui\less\images.less" />
+    <None Include="INC\metro.ui\less\layout.less" />
+    <None Include="INC\metro.ui\less\lists.less" />
+    <None Include="INC\metro.ui\less\menus.less" />
+    <None Include="INC\metro.ui\less\metro-bootstrap-responsive.less" />
+    <None Include="INC\metro.ui\less\metro-bootstrap.less" />
+    <None Include="INC\metro.ui\less\misc.less" />
+    <None Include="INC\metro.ui\less\navigation-bar.less" />
+    <None Include="INC\metro.ui\less\notice.less" />
+    <None Include="INC\metro.ui\less\notify.less" />
+    <None Include="INC\metro.ui\less\pagination.less" />
+    <None Include="INC\metro.ui\less\panels.less" />
+    <None Include="INC\metro.ui\less\progress-bar.less" />
+    <None Include="INC\metro.ui\less\rating.less" />
+    <None Include="INC\metro.ui\less\reset.less" />
+    <None Include="INC\metro.ui\less\scroll.less" />
+    <None Include="INC\metro.ui\less\sidebar.less" />
+    <None Include="INC\metro.ui\less\slider.less" />
+    <None Include="INC\metro.ui\less\stepper.less" />
+    <None Include="INC\metro.ui\less\streamer.less" />
+    <None Include="INC\metro.ui\less\tab-control.less" />
+    <None Include="INC\metro.ui\less\tables.less" />
+    <None Include="INC\metro.ui\less\tiles.less" />
+    <None Include="INC\metro.ui\less\transform.less" />
+    <None Include="INC\metro.ui\less\treeview.less" />
+    <None Include="INC\metro.ui\less\typography.less" />
+    <None Include="INC\metro.ui\less\utils.less" />
+    <None Include="INC\metro.ui\less\variables.less" />
+    <None Include="INC\metro.ui\less\window.less" />
+    <None Include="INC\metro.ui\less\wizard.less" />
+    <None Include="INC\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b65c344e-ef11-45c3-a9fd-46787b7db75c}</SharePointProjectItemId>
+    </None>
+    <None Include="ISAPI\ContentTypeManagement\Field\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ea89e28d-a39d-4b55-9b1f-60121a14772d}</SharePointProjectItemId>
+    </None>
+    <None Include="ISAPI\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{415fd4a9-9417-4d88-8a64-8bfa09d6ca8b}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a78e577e-c1ad-43c2-8eb0-d97013c34275}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{ff810c32-471e-4fec-b446-a3a81bdb8954}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="INC\ContentTypeManagement\FieldManagementViewModel.js" />
+    <Content Include="INC\ContentTypeManagement\jquery-2.1.0.min.js" />
+    <Content Include="INC\ContentTypeManagement\jquery.widget.min.js" />
+    <Content Include="INC\ContentTypeManagement\knockout-3.1.0.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\ca-CA.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\da-DK.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\de-DE.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\el-GR.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\en-US.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\es-ES.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\fa-IR.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\fr-FR.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\he-IL.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\hr-HR.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\hu-HU.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\it-IT.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\ja-JP.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\ko-KR.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\lv-LV.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\nl-BE.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\nl-NL.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\no-NB.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\pl-PL.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\pt-BR.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\pt-PT.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\ru-RU.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\sv-SE.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.localization\zh-CN.js" />
+    <Content Include="INC\ContentTypeManagement\knockout.validation.min.js" />
+    <Content Include="INC\metro.ui\css\metro-bootstrap-responsive.css" />
+    <Content Include="INC\metro.ui\css\metro-bootstrap.css" />
+    <Content Include="INC\metro.ui\fonts\iconFont.dev.svg" />
+    <Content Include="INC\metro.ui\fonts\iconFont.svg" />
+    <Content Include="INC\metro.ui\fonts\metroSysIcons.svg" />
+    <Content Include="INC\metro.ui\js\metro-accordion.js" />
+    <Content Include="INC\metro.ui\js\metro-button-set.js" />
+    <Content Include="INC\metro.ui\js\metro-calendar.js" />
+    <Content Include="INC\metro.ui\js\metro-carousel.js" />
+    <Content Include="INC\metro.ui\js\metro-core.js" />
+    <Content Include="INC\metro.ui\js\metro-countdown.js" />
+    <Content Include="INC\metro.ui\js\metro-date-format.js" />
+    <Content Include="INC\metro.ui\js\metro-datepicker.js" />
+    <Content Include="INC\metro.ui\js\metro-dialog.js" />
+    <Content Include="INC\metro.ui\js\metro-drag-tile.js" />
+    <Content Include="INC\metro.ui\js\metro-dropdown.js" />
+    <Content Include="INC\metro.ui\js\metro-fluentmenu.js" />
+    <Content Include="INC\metro.ui\js\metro-global.js" />
+    <Content Include="INC\metro.ui\js\metro-hint.js" />
+    <Content Include="INC\metro.ui\js\metro-initiator.js" />
+    <Content Include="INC\metro.ui\js\metro-input-control.js" />
+    <Content Include="INC\metro.ui\js\metro-listview.js" />
+    <Content Include="INC\metro.ui\js\metro-live-tile.js" />
+    <Content Include="INC\metro.ui\js\metro-loader.js" />
+    <Content Include="INC\metro.ui\js\metro-locale.js" />
+    <Content Include="INC\metro.ui\js\metro-notify.js" />
+    <Content Include="INC\metro.ui\js\metro-panel.js" />
+    <Content Include="INC\metro.ui\js\metro-plugin-template.js" />
+    <Content Include="INC\metro.ui\js\metro-progressbar.js" />
+    <Content Include="INC\metro.ui\js\metro-pull.js" />
+    <Content Include="INC\metro.ui\js\metro-rating.js" />
+    <Content Include="INC\metro.ui\js\metro-scroll.js" />
+    <Content Include="INC\metro.ui\js\metro-slider.js" />
+    <Content Include="INC\metro.ui\js\metro-stepper.js" />
+    <Content Include="INC\metro.ui\js\metro-streamer.js" />
+    <Content Include="INC\metro.ui\js\metro-tab-control.js" />
+    <Content Include="INC\metro.ui\js\metro-table.js" />
+    <Content Include="INC\metro.ui\js\metro-tile-transform.js" />
+    <Content Include="INC\metro.ui\js\metro-times.js" />
+    <Content Include="INC\metro.ui\js\metro-touch-handler.js" />
+    <Content Include="INC\metro.ui\js\metro-treeview.js" />
+    <Content Include="INC\metro.ui\js\metro-wizard.js" />
+    <Content Include="INC\metro.ui\min\iconFont.min.css" />
+    <Content Include="INC\metro.ui\min\metro-bootstrap-responsive.min.css" />
+    <Content Include="INC\metro.ui\min\metro-bootstrap.min.css" />
+    <Content Include="INC\metro.ui\min\metro.min.js" />
+    <Content Include="ISAPI\ContentTypeManagement\Field\Field.svc" />
+    <Content Include="Layouts\ContentTypeManagement\FieldManagement.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Jjaramillo.SP2013.Transactions\Jjaramillo.SP2013.Transactions.csproj">
+      <Project>{7550a156-5606-4e0b-90fd-84d182c1da1c}</Project>
+      <Name>Jjaramillo.SP2013.Transactions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>
