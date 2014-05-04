@@ -1,4 +1,5 @@
-﻿using System.ServiceModel;
+﻿using Jjaramillo.SP2013.ContentTypeManagement.Entities;
+using System.ServiceModel;
 
 namespace Jjaramillo.SP2013.ContentTypeManagement.ISAPI.ContentTypeManagement
 {
@@ -7,13 +8,17 @@ namespace Jjaramillo.SP2013.ContentTypeManagement.ISAPI.ContentTypeManagement
     public interface IField
     {
         [OperationContract]
-        void AddField(string displayName, string name, string group, string fieldType, object defaultValue, bool hidden, bool required, bool indexed, string[] choices, string contextUrl);
+        void AddField(string displayName, string name, string group, string fieldType, object defaultValue, string format, bool hidden, bool required, bool indexed, string[] choices,
+            double maximumValue, double minimumValue, int decimals, int localeId, string contextUrl);
 
         [OperationContract]
         string[] GetSPFieldTypes();
 
         [OperationContract]
         string[] GetSPFieldGroups(string contextUrl);
+
+        [OperationContract]
+        LocaleInfo[] GetLocales();
     }
 }
 

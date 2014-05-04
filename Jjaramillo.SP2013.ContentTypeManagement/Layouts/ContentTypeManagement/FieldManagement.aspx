@@ -127,7 +127,7 @@
                     <div class="span3">
                         <div class="input-control select">
                             <label>Locale</label>
-                            <select data-bind="optionsCaption: '[Select a locale to format the currency field]', value: localeId, options: locales"></select>                            
+                            <select data-bind="optionsCaption: '[Select a locale to format the currency field]', value: localeId, options: locales, optionsText: 'LocaleName', optionsValue: 'LCID'"></select>                            
                         </div>
                     </div>
                     <div class="span3">
@@ -138,6 +138,29 @@
                         </div>
                     </div>
                     <div class="span3">
+                        <div class="input-control text">
+                            <label>Maximum Value</label>
+                            <input type="text" placeholder="Maximum value for the currency field" data-bind="value: maximumValue" />
+                            <button class="btn-clear"></button>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="row" data-bind="visible: fieldType() == 'Number'">
+                    <div class="span4">
+                        <div class="input-control text">
+                            <label>Decimals</label>
+                            <input type="text" placeholder="Number of decimals for the currency field" data-bind="value: decimals" />
+                            <button class="btn-clear"></button>
+                        </div>
+                    </div>                    
+                    <div class="span4">
+                        <div class="input-control text">
+                            <label>Minimum Value</label>
+                            <input type="text" placeholder="Minimum value for the currency field" data-bind="value: minimumValue"/>
+                            <button class="btn-clear"></button>
+                        </div>
+                    </div>
+                    <div class="span4">
                         <div class="input-control text">
                             <label>Maximum Value</label>
                             <input type="text" placeholder="Maximum value for the currency field" data-bind="value: maximumValue" />

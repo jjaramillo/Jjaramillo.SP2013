@@ -1,6 +1,8 @@
-﻿using Jjaramillo.SP2013.Transactions.Commands.Field;
+﻿using Jjaramillo.SP2013.ContentTypeManagement.Entities;
+using Jjaramillo.SP2013.Transactions.Commands.Field;
 using Microsoft.SharePoint;
 using System;
+using System.Globalization;
 using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
@@ -14,7 +16,7 @@ namespace Jjaramillo.SP2013.ContentTypeManagement.ISAPI.ContentTypeManagement
     {
 
         [WebInvoke(Method = "PUT", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "Add", BodyStyle = WebMessageBodyStyle.Wrapped)]
-        public void AddField(string displayName, string name, string group, string fieldType, object defaultValue, bool hidden, bool required, bool indexed, string[] choices,
+        public void AddField(string displayName, string name, string group, string fieldType, object defaultValue, string format, bool hidden, bool required, bool indexed, string[] choices,
             double maximumValue, double minimumValue, int decimals, int localeId, string contextUrl)
         {
             SPSecurity.RunWithElevatedPrivileges(delegate()
@@ -47,7 +49,9 @@ namespace Jjaramillo.SP2013.ContentTypeManagement.ISAPI.ContentTypeManagement
         [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "SPFieldTypes", BodyStyle = WebMessageBodyStyle.Wrapped)]
         public string[] GetSPFieldTypes()
         {
-            return Enum.GetNames(typeof(SPFieldType));
+            return (from spfieldTypeName in Enum.GetNames(typeof(SPFieldType))
+                    orderby spfieldTypeName
+                    select spfieldTypeName).ToArray();
         }
 
         [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "Groups?contextUrl={contextUrl}", BodyStyle = WebMessageBodyStyle.Wrapped)]
@@ -67,6 +71,21 @@ namespace Jjaramillo.SP2013.ContentTypeManagement.ISAPI.ContentTypeManagement
                 }
             });
             return groups;
+        }
+
+        [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "Locales", BodyStyle = WebMessageBodyStyle.Wrapped)]
+        public LocaleInfo[] GetLocales()
+        {
+            LocaleInfo[] locales = default(LocaleInfo[]);
+            CultureInfo[] allLocales = CultureInfo.GetCultures(CultureTypes.AllCultures);
+            locales = (from cultureInfo in allLocales
+                       orderby cultureInfo.DisplayName
+                       select new LocaleInfo
+                       {
+                           LCID = cultureInfo.LCID,
+                           LocaleName = cultureInfo.DisplayName
+                       }).ToArray();
+            return locales;
         }
     }
 }

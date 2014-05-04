@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Commands\Field\AddSPFieldChoiceCommand.cs" />
     <Compile Include="Commands\Field\AddSPFieldCommand.cs" />
+    <Compile Include="Commands\Field\AddSPFieldCurrencyCommand.cs" />
     <Compile Include="Commands\Field\SPFieldCommand.cs" />
     <Compile Include="Commands\ListItem\AddListItemCommand.cs" />
     <Compile Include="Commands\ListItem\DeleteListItemCommand.cs" />
