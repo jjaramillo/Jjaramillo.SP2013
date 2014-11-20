@@ -54,7 +54,7 @@ namespace Jjaramillo.SP2013.Transactions.Commands.ListItem
 
         public override void Undo()
         {
-            
+            RemoveListItem();
         }
 
         /// <summary>
