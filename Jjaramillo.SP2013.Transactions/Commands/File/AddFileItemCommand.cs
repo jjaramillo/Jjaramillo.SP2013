@@ -81,7 +81,7 @@ namespace Jjaramillo.SP2013.Transactions.Commands.File
         protected void AddFileItem()
         {
             SPContentTypeId listItemContentTypeId = new SPContentTypeId(_ContentTypeId);
-            _FieldValues.Add("ContentTypeId", listItemContentTypeId);
+            _FieldValues.Add("ContentType", _SPWeb.ContentTypes[listItemContentTypeId].Name);
             _File= _List.RootFolder.Files.Add(_FileName, _FileData, _FieldValues, _Overwrite);
             _ListItem = _File.Item;
         }
