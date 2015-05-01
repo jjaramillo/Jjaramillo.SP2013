@@ -54,9 +54,13 @@
     <Compile Include="Commands\Field\AddSPFieldCurrencyCommand.cs" />
     <Compile Include="Commands\Field\SPFieldCommand.cs" />
     <Compile Include="Commands\File\AddFileItemCommand.cs" />
+    <Compile Include="Commands\Folder\CopyFolderCommand.cs" />
+    <Compile Include="Commands\Folder\FolderCommand.cs" />
+    <Compile Include="Commands\Folder\MoveFolderCommand.cs" />
     <Compile Include="Commands\ListItem\AddListItemCommand.cs" />
     <Compile Include="Commands\ListItem\DeleteListItemCommand.cs" />
     <Compile Include="Commands\ListItem\ListItemCommand.cs" />
+    <Compile Include="Commands\ListItem\MoveListItemCommand.cs" />
     <Compile Include="Commands\ListItem\UpdateListItemCommand.cs" />
     <Compile Include="Commands\SPCommand.cs" />
     <Compile Include="Commands\SPCommandCollection.cs" />
